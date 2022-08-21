@@ -1,0 +1,41 @@
+<!--
+ * @Author: 陈孝 2441940130@qq.com
+ * @Date: 2022-08-21 18:14:18
+ * @LastEditors: 陈孝 2441940130@qq.com
+ * @LastEditTime: 2022-08-21 19:11:59
+ * @FilePath: /jsSenior/02.数据-变量-内存3.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        关于引用变量赋值的问题
+          2个引用变量指向同一个对象，通过一个变量修改对象内部数据，另一个变量看到的是修改之后的数据
+          2个引用变量指向同一个对象,让其中一个引用变量指向另一个变量，另一个引用变量依然指向前一个对象
+    -->
+    <script>
+        var obj1 = {name:'tom'}
+        var obj2 = obj1
+        obj1.name = 'jack'
+        console.log(obj2.name); //'jack'
+
+        var a = {age:12}
+        var b = a
+        a = {name:'Bob',age:14}
+        b.age = 15
+        console.log(b.age,a.name,a.age); //15 Bob 14
+
+        function fn(obj){
+            obj = {age:16}
+        }
+        console.log(a);
+    </script>
+</body>
+</html>

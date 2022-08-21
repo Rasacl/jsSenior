@@ -1,0 +1,60 @@
+<!--
+ * @Author: 陈孝 2441940130@qq.com
+ * @Date: 2022-08-20 19:36:10
+ * @LastEditors: 陈孝 2441940130@qq.com
+ * @LastEditTime: 2022-08-20 20:24:29
+ * @FilePath: /jsSenior/基础总结深入/01.数据类型2.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        1 undefined与null的区别
+          undefined代表以定义未赋值
+          null定义赋值，只是值为null
+
+        2 什么时候要给变量赋值为null
+          初始赋值  表明将要赋值为对象
+          结束时  让对象成为垃圾对象（被垃圾回收器回收）
+
+
+        3 严格区分变量类型与数据类型
+          数据类型：
+            基本类型
+            对象类型
+          变量类型：变量内存值的类型
+            基本类型：保存的就是基本数据类型
+            引用类型：保存的是地址值
+
+    -->
+    <script>
+        //实例：实例对象
+        //类型：类型对象
+        function Person(name,age){ //构造函数  类型
+            this.name = name
+            this.age = age
+        }
+
+        var p = new Person('tom',12) //根据类型创建的实例对象
+
+        var a
+        console.log(a); //undefined
+        a = null
+        console.log(a);  //null
+
+        var b = null //初始赋值为null  表明要赋值为对象
+        b = ['eew',2]
+        //最后
+        b = null //让b指向的对象成为垃圾对象（被垃圾回收器回收）
+
+        var c = {}
+    </script>
+</body>
+</html>

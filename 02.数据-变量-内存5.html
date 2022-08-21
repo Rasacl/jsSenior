@@ -1,0 +1,39 @@
+<!--
+ * @Author: 陈孝 2441940130@qq.com
+ * @Date: 2022-08-21 18:14:32
+ * @LastEditors: 陈孝 2441940130@qq.com
+ * @LastEditTime: 2022-08-21 19:30:42
+ * @FilePath: /jsSenior/02.数据-变量-内存5.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        问题：js引擎如何让管理内存
+         1.内存的生命周期
+           分配空间，得到他的使用权
+           存储数据，可以反复进行操作
+           释放当前空间
+         2.释放内存
+           局部变量：函数执行完自动释放
+           对象：成为垃圾对象 ==》 垃圾回收器回收
+    -->
+    <script>
+        var a = 3
+        var obj = {}
+        obj = null
+        function fn(){
+            var b =3
+        }
+
+        fn() //b是自动释放的，b所指向的对象是在后面的某个时间的垃圾回收器回收
+    </script>
+</body>
+</html>

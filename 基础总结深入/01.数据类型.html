@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        基本类型
+          String ：任意字符串
+          Number：任意数字
+          Boolean：false/true
+          undefined：undefined
+          Null：null
+        对象(引用)类型
+          Object：任意对象
+          Array：一种特别的对象（数值下标）
+          Function：一种特别的对象（可以执行）
+        判断
+          typeof  undefined/数值/字符串/布尔值/function    不能判断null/object/array
+          instanceof  判断对象的具体类型
+          ===  可以判断undefined null
+    -->
+    <script>
+        //基本
+        //typeof  返回数据类型的字符串表达
+        var a
+        console.log(a, typeof a, a === undefined); //undefined  'undefined' true
+        console.log(undefined === 'undefined');
+
+        //对象
+        var b1 = {
+            b2:[1,'abc,',console.log],
+            b3:function(){
+                console.log(b3);
+                return function(){
+                    return 'hhhh'
+                }
+            }
+        }
+        console.log(b1 instanceof Object,b1 instanceof Array); //true false
+        console.log(b1.b2 instanceof Object,b1.b2 instanceof Array); //true true
+        console.log(b1.b3 instanceof Object,b1.b3 instanceof Function); //true true
+        console.log(b1.b3()());
+        var obj = {
+            name: 'tom',
+            age: 12
+        }
+
+        function test() {
+            var a = 0
+        }
+    </script>
+</body>
+
+</html>
